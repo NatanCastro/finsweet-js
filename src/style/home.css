@@ -1,9 +1,11 @@
 :root {
-  --primary-color: #1c1e53;
+  --tint-blue: #1c1e53;
+  --dark-blue: #282938;
+  --royal-blue: #2405f2;
 }
 
 #hero {
-  background-color: var(--primary-color);
+  background-color: var(--tint-blue);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,7 +22,7 @@
   margin-block: 0.5rem;
 }
 
-#hero h2 {
+#hero > p {
   font-weight: 500;
   font-size: 1rem;
   margin-bottom: 2.5rem;
@@ -47,4 +49,38 @@
 .secundary-action {
   display: flex;
   gap: 1rem;
+}
+
+#work {
+  color: var(--dark-blue);
+  display: flex;
+  gap: 8rem;
+  align-items: start;
+  justify-content: center;
+  padding: 4rem 5rem;
+}
+
+#work a {
+  color: var(--royal-blue);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.steps {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.step-icon {
+  display: grid;
+  background-color: #2405f2;
+  background-image: url("../public/step-icon.svg");
+  background-position: center center;
+  width: 3.125rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 0.6rem;
+  color: white;
 }
