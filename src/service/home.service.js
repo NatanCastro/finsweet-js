@@ -1,44 +1,79 @@
 import { heroData } from "../data/home/hero.js";
 import { placeElement } from "../factory/place-element.factory.js";
+import { createElement } from "../factory/create-element.factory.js";
 export class HomeService {
   placeElementFactory;
-  constructor(placeElementFactory) {
+  createElementFactory;
+  /**
+   * @param {typeof placeElement} placeElementFactory
+   * @param {typeof createElement} createElementFactory
+   */
+  constructor(placeElementFactory, createElementFactory) {
     this.placeElementFactory = placeElementFactory;
+    this.createElementFactory = createElementFactory;
   }
 
+  /**
+   * @param {HTMLElement} heroSect
+   */
   createHero(heroSect) {
-    const leftDiv = document.createElement("div");
+    const leftDiv = this.createElementFactory("div");
 
-    const title = document.createElement("h1");
-    title.innerText = heroData.title;
-    const subtitle = document.createElement("h2");
-    subtitle.innerText = heroData.subtitle;
+    const title = this.createElementFactory("h1", { text: heroData.title });
+    const subtitle = this.createElementFactory("h2", {
+      text: heroData.subtitle,
+    });
 
-    const buttonDiv = document.createElement("div");
-    buttonDiv.classList.add("hero-actions");
-    const primaryLink = document.createElement("a");
-    primaryLink.innerText = heroData.primaryButton.text;
-    primaryLink.setAttribute("href", heroData.primaryButton.action);
-    primaryLink.classList.add("primary-action");
-    const secundaryLink = document.createElement("a");
-    secundaryLink.innerText = heroData.secondaryButton.text;
-    secundaryLink.setAttribute("href", heroData.secondaryButton.action);
-    secundaryLink.classList.add("secundary-action");
-    const arrow = document.createElement("img");
-    arrow.setAttribute("src", "../public/arrow.svg");
+    const buttonDiv = this.createElementFactory("div", {
+      class: "hero-actions",
+    });
+    const primaryLink = this.createElementFactory("a", {
+      text: heroData.primaryButton.text,
+      class: "primary-action",
+      attrs: [
+        {
+          key: "href",
+          value: heroData.primaryButton.action,
+        },
+      ],
+    });
+    const secundaryLink = this.createElementFactory("a", {
+      text: heroData.secondaryButton.text,
+      class: "secundary-action",
+      attrs: [
+        {
+          key: "href",
+          value: heroData.secondaryButton.action,
+        },
+      ],
+    });
+    const arrow = this.createElementFactory("img", {
+      attrs: [
+        {
+          key: "src",
+          value: "../public/arrow.svg",
+        },
+      ],
+    });
 
-    placeElement(arrow, secundaryLink);
-    placeElement(primaryLink, buttonDiv);
-    placeElement(secundaryLink, buttonDiv);
+    const img = this.createElementFactory("img", {
+      attrs: [
+        {
+          key: "src",
+          value: heroData.image,
+        },
+      ],
+    });
 
-    const img = document.createElement("img");
-    img.setAttribute("src", heroData.image);
+    this.placeElementFactory(arrow, secundaryLink);
+    this.placeElementFactory(primaryLink, buttonDiv);
+    this.placeElementFactory(secundaryLink, buttonDiv);
 
-    placeElement(title, leftDiv);
-    placeElement(subtitle, leftDiv);
-    placeElement(buttonDiv, leftDiv);
+    this.placeElementFactory(title, leftDiv);
+    this.placeElementFactory(subtitle, leftDiv);
+    this.placeElementFactory(buttonDiv, leftDiv);
 
-    placeElement(leftDiv, heroSect);
-    placeElement(img, heroSect);
+    this.placeElementFactory(leftDiv, heroSect);
+    this.placeElementFactory(img, heroSect);
   }
 }
