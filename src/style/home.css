@@ -2,6 +2,7 @@
   --tint-blue: #1c1e53;
   --dark-blue: #282938;
   --royal-blue: #2405f2;
+  --arrow-color: white;
 }
 
 #hero {
@@ -61,6 +62,7 @@
 }
 
 #work a {
+  --arrow-color: var(--royal-blue);
   color: var(--royal-blue);
   display: flex;
   gap: 0.5rem;
