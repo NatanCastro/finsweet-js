@@ -1,6 +1,8 @@
 import { linkComponent } from "../components/link.js";
+import { projectComponent } from "../components/project.js";
 import { workStepComponent } from "../components/work-step.js";
 import { heroData } from "../data/home/hero.js";
+import { projectsData } from "../data/home/projects.js";
 import { workData } from "../data/home/work.js";
 
 export class HomeService {
@@ -85,5 +87,32 @@ export class HomeService {
 
     this.factoryService.placeElement(leftDiv, workSect);
     this.factoryService.placeElement(rightDiv, workSect);
+  }
+
+  createProjects(projectsSect) {
+    const topDiv = this.factoryService.createElement("div");
+    const title = this.factoryService.createElement("h2", {
+      text: projectsData.title,
+    });
+    const link = linkComponent(
+      projectsData.button.text,
+      projectsData.button.action,
+      undefined,
+      true
+    );
+
+    const projectsDiv = this.factoryService.createElement("div", {
+      id: "projects-list",
+    });
+    projectsData.projects.forEach((project) => {
+      const projectEl = projectComponent(project.image, project?.overlay);
+      this.factoryService.placeElement(projectEl, projectsDiv);
+    });
+
+    this.factoryService.placeElement(title, topDiv);
+    this.factoryService.placeElement(link, topDiv);
+
+    this.factoryService.placeElement(topDiv, projectsSect);
+    this.factoryService.placeElement(projectsDiv, projectsSect);
   }
 }

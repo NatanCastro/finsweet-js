@@ -20,7 +20,7 @@ export function createElement(tag, values) {
     element.innerText = values.text;
   }
   if (values.class) {
-    element.classList.add(values.class);
+    values.class.split(" ").forEach((c) => element.classList.add(c));
   }
   if (values.id) {
     element.setAttribute("id", values.id);

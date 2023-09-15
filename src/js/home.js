@@ -12,3 +12,6 @@ homeService.createHero(heroSect);
 
 const workSect = document.getElementById("work");
 homeService.createWork(workSect);
+
+const projectsSect = document.getElementById("projects");
+homeService.createProjects(projectsSect);
