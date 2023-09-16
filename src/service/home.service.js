@@ -1,6 +1,8 @@
+import { featureComponent } from "../components/feature.js";
 import { linkComponent } from "../components/link.js";
 import { projectComponent } from "../components/project.js";
 import { workStepComponent } from "../components/work-step.js";
+import { featuresData } from "../data/home/features.js";
 import { heroData } from "../data/home/hero.js";
 import { projectsData } from "../data/home/projects.js";
 import { workData } from "../data/home/work.js";
@@ -114,5 +116,32 @@ export class HomeService {
 
     this.factoryService.placeElement(topDiv, projectsSect);
     this.factoryService.placeElement(projectsDiv, projectsSect);
+  }
+
+  createFeatures(featuresSect) {
+    const p = this.factoryService.createElement("p", {
+      text: featuresData.name,
+    });
+
+    const title = this.factoryService.createElement("h2", {
+      text: featuresData.title,
+    });
+
+    const featuresDiv = this.factoryService.createElement("div", {
+      id: "features-list",
+    });
+
+    featuresData.features.forEach((feature) => {
+      const featureEl = featureComponent(
+        feature.icon,
+        feature.title,
+        feature.text
+      );
+      this.factoryService.placeElement(featureEl, featuresDiv);
+    });
+
+    this.factoryService.placeElement(p, featuresSect);
+    this.factoryService.placeElement(title, featuresSect);
+    this.factoryService.placeElement(featuresDiv, featuresSect);
   }
 }

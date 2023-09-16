@@ -15,3 +15,6 @@ homeService.createWork(workSect);
 
 const projectsSect = document.getElementById("projects");
 homeService.createProjects(projectsSect);
+
+const featuresSect = document.getElementById("features");
+homeService.createFeatures(featuresSect);
