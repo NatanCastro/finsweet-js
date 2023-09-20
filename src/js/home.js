@@ -1,11 +1,4 @@
-import { HomeService } from "../service/home.service.js";
-import { placeElement } from "../factory/place-element.factory.js";
-import { createElement } from "../factory/create-element.factory.js";
-import { FactoryService } from "../service/factory.service.js";
-
-const factoryService = new FactoryService(placeElement, createElement);
-
-const homeService = new HomeService(factoryService);
+import { homeService } from "../service/setup/index.js";
 
 const heroSect = document.getElementById("hero");
 homeService.createHero(heroSect);
@@ -18,3 +11,6 @@ homeService.createProjects(projectsSect);
 
 const featuresSect = document.getElementById("features");
 homeService.createFeatures(featuresSect);
+
+const testimonialsSect = document.getElementById("testimony");
+homeService.createTestimonials(testimonialsSect);

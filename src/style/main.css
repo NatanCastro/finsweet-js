@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("./variables.css");
 
 html {
   font-family: "Poppins", sans-serif;
+  color: var(--dark-blue);
 }
 
 a {

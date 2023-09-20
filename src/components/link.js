@@ -14,7 +14,7 @@ export function linkComponent(text, action, className, arrow) {
     ],
   });
   if (arrow) {
-    const arrowEl = arrowComponent();
+    const arrowEl = arrowComponent("long");
     placeElement(arrowEl, link);
   }
   return link;

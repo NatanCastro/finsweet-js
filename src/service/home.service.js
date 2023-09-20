@@ -1,10 +1,13 @@
+import { carouselComponent } from "../components/carousel.js";
 import { featureComponent } from "../components/feature.js";
 import { linkComponent } from "../components/link.js";
 import { projectComponent } from "../components/project.js";
+import { testimonyCardComponent } from "../components/testimony-card.js";
 import { workStepComponent } from "../components/work-step.js";
 import { featuresData } from "../data/home/features.js";
 import { heroData } from "../data/home/hero.js";
 import { projectsData } from "../data/home/projects.js";
+import { testimonialsData } from "../data/home/testimony.js";
 import { workData } from "../data/home/work.js";
 
 export class HomeService {
@@ -29,13 +32,13 @@ export class HomeService {
       heroData.primaryButton.text,
       heroData.primaryButton.action,
       "primary-action",
-      false
+      false,
     );
     const secundaryLink = linkComponent(
       heroData.secondaryButton.text,
       heroData.secondaryButton.action,
       "secundary-action",
-      true
+      true,
     );
 
     const img = this.factoryService.createElement("img", {
@@ -71,7 +74,7 @@ export class HomeService {
       workData.button.text,
       workData.button.action,
       undefined,
-      true
+      true,
     );
 
     const rightDiv = this.factoryService.createElement("div", {
@@ -100,7 +103,7 @@ export class HomeService {
       projectsData.button.text,
       projectsData.button.action,
       undefined,
-      true
+      true,
     );
 
     const projectsDiv = this.factoryService.createElement("div", {
@@ -135,7 +138,7 @@ export class HomeService {
       const featureEl = featureComponent(
         feature.icon,
         feature.title,
-        feature.text
+        feature.text,
       );
       this.factoryService.placeElement(featureEl, featuresDiv);
     });
@@ -143,5 +146,27 @@ export class HomeService {
     this.factoryService.placeElement(p, featuresSect);
     this.factoryService.placeElement(title, featuresSect);
     this.factoryService.placeElement(featuresDiv, featuresSect);
+  }
+
+  createTestimonials(testimonialsSect) {
+    const leftDiv = this.factoryService.createElement("div");
+
+    const title = this.factoryService.createElement("h2", {
+      text: testimonialsData.title,
+    });
+    const text = this.factoryService.createElement("p", {
+      text: testimonialsData.text,
+    });
+
+    const testimonialsEl = testimonialsData.testimonials.map((t) => {
+      const testimony = testimonyCardComponent(t);
+      return testimony;
+    });
+    const carousel = carouselComponent(testimonialsEl);
+
+    this.factoryService.placeElement(title, leftDiv);
+    this.factoryService.placeElement(text, leftDiv);
+    this.factoryService.placeElement(leftDiv, testimonialsSect);
+    this.factoryService.placeElement(carousel, testimonialsSect);
   }
 }
