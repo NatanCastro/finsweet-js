@@ -1,0 +1,59 @@
+@import url("../variables.css");
+
+#faq {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 5rem;
+  justify-content: space-between;
+  gap: 2rem 4rem;
+}
+
+.faq-action {
+  color: var(--royal-blue);
+}
+
+.faq-content {
+  width: clamp(350px, 55%, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  width: 100%;
+  padding: 0.5rem;
+  box-shadow: 0 2px 5px #0003;
+  overflow: hidden;
+
+  & > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+  }
+
+  & > summary::before {
+    content: attr(data-num);
+    color: var(--royal-blue);
+    font-weight: bold;
+  }
+
+  & > summary::after {
+    content: "";
+    background-image: url("../../public/open-icon.svg");
+    background-position: 50% 50%;
+    width: 15px;
+    aspect-ratio: 1;
+    display: absolute;
+    transition: 150ms linear;
+  }
+
+  &[open] > summary::after {
+    rotate: 45deg;
+  }
+
+  & > p {
+    margin: 0.5rem 0;
+  }
+}

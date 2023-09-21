@@ -1,0 +1,74 @@
+@import url("../variables.css");
+
+@media (max-width: 1024px) {
+  #hero > img {
+    display: none;
+  }
+  #work {
+    flex-direction: column;
+  }
+  #features-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .overlay {
+    padding: 2rem;
+  }
+  #projects-list > div p {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-actions {
+    justify-content: center;
+  }
+  .steps {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    place-self: center;
+  }
+  #projects-list {
+    display: flex;
+    flex-direction: column;
+  }
+  #projects-list > div p {
+    display: block;
+  }
+  .semi-overlay {
+    width: 100%;
+  }
+
+  .faq-content {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero-actions {
+    gap: 1rem;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2rem !important;
+    letter-spacing: normal;
+  }
+  h2 {
+    font-size: 1.25rem !important;
+  }
+
+  #hero {
+    padding: 1.5rem;
+  }
+
+  #faq,
+  #work,
+  #features,
+  #projects,
+  #testimony {
+    padding: 1rem;
+  }
+
+  .faq-content {
+    width: 100%;
+  }
+}

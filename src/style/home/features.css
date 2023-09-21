@@ -1,0 +1,32 @@
+@import url("../variables.css");
+
+#features {
+  padding: 4rem 5rem;
+  background-color: var(--gray);
+  color: var(--dark-blue);
+  & > p,
+  & > h2 {
+    text-align: center;
+  }
+
+  & > h2 {
+    font-size: 3rem;
+  }
+}
+
+#features-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  & > div {
+    background-color: #fff;
+    padding: 2rem;
+
+    & > img {
+      width: 2rem;
+      aspect-ratio: 1;
+    }
+  }
+}

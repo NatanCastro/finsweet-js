@@ -1,0 +1,37 @@
+@import url("../variables.css");
+
+#work {
+  color: var(--dark-blue);
+  display: flex;
+  gap: 8rem;
+  align-items: start;
+  justify-content: center;
+  padding: 4rem 5rem;
+  background-color: var(--gray);
+}
+
+#work a {
+  --arrow-color: var(--royal-blue);
+  color: var(--royal-blue);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.steps {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.step-icon {
+  display: grid;
+  background-color: #2405f2;
+  background-image: url("../../public/step-icon.svg");
+  background-position: center center;
+  width: 3.125rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 0.6rem;
+  color: white;
+}

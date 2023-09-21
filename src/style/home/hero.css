@@ -1,0 +1,49 @@
+@import url("../variables.css");
+
+#hero {
+  background-color: var(--tint-blue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 8rem;
+  color: white;
+  gap: 3rem;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 4.625rem;
+  margin-block: 0.5rem;
+}
+
+#hero > p {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+#hero > img {
+  width: clamp(20rem, 50%, 80rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.primary-action {
+  background-color: #fcd980;
+  color: black;
+  padding: 0.75rem 3.5rem;
+  border-radius: 2.5rem;
+}
+
+.secundary-action {
+  display: flex;
+  gap: 1rem;
+}

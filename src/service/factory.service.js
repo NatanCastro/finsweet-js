@@ -5,8 +5,8 @@ export class FactoryService {
   placeElementFactory;
   createElementFactory;
   /**
-   * @param {typeof placeElement} placeElementFactory
-   * @param {typeof createElement} createElementFactory
+   * @param {placeElement} placeElementFactory
+   * @param {createElement} createElementFactory
    */
   constructor(placeElementFactory, createElementFactory) {
     this.placeElementFactory = placeElementFactory;

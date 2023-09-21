@@ -1,0 +1,40 @@
+@import url("../variables.css");
+
+#testimony {
+  width: inherit;
+  padding: 4rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6rem;
+
+  & > div:first-child h2 {
+    font-size: 2rem;
+  }
+}
+
+.testimony-user {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.testimony-user-image {
+  width: 4rem;
+  height: 4rem;
+  background-position: 45% 40%;
+  background-size: 80px;
+  border-radius: 50%;
+}
+
+.testimony-user > div:last-child p {
+  font-size: 1.25rem;
+  margin: 0.25rem;
+}
+
+.testimony-user > div:last-child p:last-child {
+  font-size: 0.75rem;
+}
+
+#testimonials {
+  width: min-content;
+}

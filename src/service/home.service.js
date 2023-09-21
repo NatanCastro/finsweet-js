@@ -1,21 +1,30 @@
 import { carouselComponent } from "../components/carousel.js";
+import { faqComponent } from "../components/faq.js";
 import { featureComponent } from "../components/feature.js";
 import { linkComponent } from "../components/link.js";
 import { projectComponent } from "../components/project.js";
 import { testimonyCardComponent } from "../components/testimony-card.js";
 import { workStepComponent } from "../components/work-step.js";
+import { faqData } from "../data/home/faq.js";
 import { featuresData } from "../data/home/features.js";
 import { heroData } from "../data/home/hero.js";
 import { projectsData } from "../data/home/projects.js";
 import { testimonialsData } from "../data/home/testimony.js";
 import { workData } from "../data/home/work.js";
+import { FactoryService } from "./factory.service.js";
 
 export class HomeService {
   factoryService;
+  /**
+   * @param {FactoryService} factoryService
+   */
   constructor(factoryService) {
     this.factoryService = factoryService;
   }
 
+  /**
+   * @param {HTMLElement} heroSect
+   */
   createHero(heroSect) {
     const leftDiv = this.factoryService.createElement("div");
     const title = this.factoryService.createElement("h1", {
@@ -61,6 +70,9 @@ export class HomeService {
     this.factoryService.placeElement(img, heroSect);
   }
 
+  /**
+   * @param {HTMLElement} workSect
+   */
   createWork(workSect) {
     const leftDiv = this.factoryService.createElement("div");
     const title = this.factoryService.createElement("h1", {
@@ -94,6 +106,9 @@ export class HomeService {
     this.factoryService.placeElement(rightDiv, workSect);
   }
 
+  /**
+   * @param {HTMLElement} projectsSect
+   */
   createProjects(projectsSect) {
     const topDiv = this.factoryService.createElement("div");
     const title = this.factoryService.createElement("h2", {
@@ -121,6 +136,9 @@ export class HomeService {
     this.factoryService.placeElement(projectsDiv, projectsSect);
   }
 
+  /**
+   * @param {HTMLElement} featuresSect
+   */
   createFeatures(featuresSect) {
     const p = this.factoryService.createElement("p", {
       text: featuresData.name,
@@ -148,6 +166,9 @@ export class HomeService {
     this.factoryService.placeElement(featuresDiv, featuresSect);
   }
 
+  /**
+   * @param {HTMLElement} testimonialsSect
+   */
   createTestimonials(testimonialsSect) {
     const leftDiv = this.factoryService.createElement("div");
 
@@ -168,5 +189,35 @@ export class HomeService {
     this.factoryService.placeElement(text, leftDiv);
     this.factoryService.placeElement(leftDiv, testimonialsSect);
     this.factoryService.placeElement(carousel, testimonialsSect);
+  }
+
+  /**
+   * @param {HTMLElement} faqSect
+   */
+  createFaq(faqSect) {
+    const leftDiv = this.factoryService.createElement("div");
+
+    const title = this.factoryService.createElement("h2", {
+      text: faqData.title,
+      class: "faq-title",
+    });
+
+    const button = this.factoryService.createElement("a", {
+      text: faqData.button.text,
+      class: "faq-action",
+      attrs: [
+        {
+          key: "href",
+          value: faqData.button.action,
+        },
+      ],
+    });
+
+    const faqEl = faqComponent(faqData.faq);
+
+    this.factoryService.placeElement(title, leftDiv);
+    this.factoryService.placeElement(button, leftDiv);
+    this.factoryService.placeElement(leftDiv, faqSect);
+    this.factoryService.placeElement(faqEl, faqSect);
   }
 }

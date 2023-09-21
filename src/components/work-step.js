@@ -7,7 +7,7 @@ export function workStepComponent(num, title, text) {
     class: "step-icon",
   });
   const numIconText = createElement("span", {
-    text: `0${num + 1}`,
+    text: (num + 1).toString().padStart(2, "0"),
   });
   const titleEl = createElement("h3", { text: title });
   const textEl = createElement("p", { text: text });

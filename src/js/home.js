@@ -14,3 +14,6 @@ homeService.createFeatures(featuresSect);
 
 const testimonialsSect = document.getElementById("testimony");
 homeService.createTestimonials(testimonialsSect);
+
+const faqSect = document.getElementById("faq");
+homeService.createFaq(faqSect);
