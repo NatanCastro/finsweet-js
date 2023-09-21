@@ -17,3 +17,6 @@ homeService.createTestimonials(testimonialsSect);
 
 const faqSect = document.getElementById("faq");
 homeService.createFaq(faqSect);
+
+const inquiryFormSect = document.getElementById("inquiry-form");
+homeService.createInquiryForm(inquiryFormSect);

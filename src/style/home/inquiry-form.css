@@ -1,0 +1,70 @@
+@import url("../variables.css");
+#inquiry-form {
+  padding: 4rem 5rem;
+  color: white;
+}
+
+.inquiry-form-shell {
+  width: 100%;
+  display: flex;
+  background-color: var(--tint-blue);
+
+  & > div:first-child {
+    width: 100%;
+    position: relative;
+    background-image: url("../../public/form-bg.jpeg");
+    background-size: cover;
+    background-position: 0 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #1c1e5399;
+    }
+
+    & > .inquiry-form-content {
+      padding: 5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    & h2 {
+      margin-top: 0;
+      font-size: 3rem;
+    }
+  }
+}
+
+.inquiry-form-form {
+  padding: 5rem;
+  & > form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block: 1.5rem;
+
+    & > input {
+      all: unset;
+      border-radius: 10px;
+      padding: 1rem 2rem;
+      border: 1px solid #fff3;
+      color: #f4f6fc;
+    }
+
+    & > button {
+      border: none;
+      background-color: var(--yellow);
+      padding: 1rem;
+      border-radius: 999px;
+    }
+  }
+
+  & > a {
+    justify-content: center;
+    align-items: center;
+  }
+}

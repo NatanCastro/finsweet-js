@@ -1,6 +1,7 @@
 import { carouselComponent } from "../components/carousel.js";
 import { faqComponent } from "../components/faq.js";
 import { featureComponent } from "../components/feature.js";
+import { inquiryForm } from "../components/inquiry-form.js";
 import { linkComponent } from "../components/link.js";
 import { projectComponent } from "../components/project.js";
 import { testimonyCardComponent } from "../components/testimony-card.js";
@@ -8,6 +9,7 @@ import { workStepComponent } from "../components/work-step.js";
 import { faqData } from "../data/home/faq.js";
 import { featuresData } from "../data/home/features.js";
 import { heroData } from "../data/home/hero.js";
+import { inquiryFormData } from "../data/home/inquiry-form.js";
 import { projectsData } from "../data/home/projects.js";
 import { testimonialsData } from "../data/home/testimony.js";
 import { workData } from "../data/home/work.js";
@@ -219,5 +221,53 @@ export class HomeService {
     this.factoryService.placeElement(button, leftDiv);
     this.factoryService.placeElement(leftDiv, faqSect);
     this.factoryService.placeElement(faqEl, faqSect);
+  }
+
+  /**
+   * @param {HTMLElement} inquiryFormSect
+   */
+  createInquiryForm(inquiryFormSect) {
+    const shell = this.factoryService.createElement("div", {
+      class: "inquiry-form-shell",
+    });
+    const leftDiv = this.factoryService.createElement("div");
+    const rightDiv = this.factoryService.createElement("div", {
+      class: "inquiry-form-form",
+    });
+    const leftDivContent = this.factoryService.createElement("div", {
+      class: "inquiry-form-content",
+    });
+
+    const title = this.factoryService.createElement("h2", {
+      text: inquiryFormData.title,
+    });
+    const text = this.factoryService.createElement("p", {
+      text: inquiryFormData.text,
+    });
+
+    const formTitle = this.factoryService.createElement("h2", {
+      text: inquiryFormData.form.title,
+    });
+    const formText = this.factoryService.createElement("p", {
+      text: inquiryFormData.form.text,
+    });
+    const form = inquiryForm(inquiryFormData.form);
+    const button = linkComponent(
+      inquiryFormData.button.text,
+      inquiryFormData.button.action,
+      undefined,
+      true,
+    );
+
+    this.factoryService.placeElement(title, leftDivContent);
+    this.factoryService.placeElement(text, leftDivContent);
+    this.factoryService.placeElement(leftDivContent, leftDiv);
+    this.factoryService.placeElement(formTitle, rightDiv);
+    this.factoryService.placeElement(formText, rightDiv);
+    this.factoryService.placeElement(form, rightDiv);
+    this.factoryService.placeElement(button, rightDiv);
+    this.factoryService.placeElement(leftDiv, shell);
+    this.factoryService.placeElement(rightDiv, shell);
+    this.factoryService.placeElement(shell, inquiryFormSect);
   }
 }

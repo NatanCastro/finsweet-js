@@ -16,6 +16,9 @@
   #projects-list > div p {
     display: none;
   }
+  .inquiry-form-shell {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 768px) {
@@ -40,6 +43,11 @@
   .faq-content {
     margin: 0 auto;
   }
+
+  .inquiry-form-content,
+  .inquiry-form-form {
+    padding: 2rem !important;
+  }
 }
 
 @media (max-width: 425px) {
@@ -60,6 +68,7 @@
     padding: 1.5rem;
   }
 
+  #inquiry-form,
   #faq,
   #work,
   #features,
