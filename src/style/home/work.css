@@ -1,5 +1,3 @@
-@import url("../variables.css");
-
 #work {
   color: var(--dark-blue);
   display: flex;
