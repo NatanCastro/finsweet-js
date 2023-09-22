@@ -6,7 +6,7 @@ export const testimonialsData = {
       quote:
         '"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."',
       user: {
-        photo: "../public/testimony-user.png",
+        photo: "/public/testimony-user.png",
         name: "Jenny Wilsona",
         position: "Vice President",
       },
@@ -15,7 +15,7 @@ export const testimonialsData = {
       quote:
         '"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."',
       user: {
-        photo: "../public/testimony-user.png",
+        photo: "/public/testimony-user.png",
         name: "Jenny Wilson",
         position: "Vice President",
       },
@@ -24,7 +24,7 @@ export const testimonialsData = {
       quote:
         '"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."',
       user: {
-        photo: "../public/testimony-user.png",
+        photo: "/public/testimony-user.png",
         name: "Jenny Wilson",
         position: "Vice President",
       },
@@ -33,7 +33,7 @@ export const testimonialsData = {
       quote:
         '"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."',
       user: {
-        photo: "../public/testimony-user.png",
+        photo: "/public/testimony-user.png",
         name: "Jenny Wilson",
         position: "Vice President",
       },
@@ -42,7 +42,7 @@ export const testimonialsData = {
       quote:
         '"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."',
       user: {
-        photo: "../public/testimony-user.png",
+        photo: "/public/testimony-user.png",
         name: "Jenny Wilson",
         position: "Vice President",
       },
@@ -51,7 +51,7 @@ export const testimonialsData = {
       quote:
         '"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."',
       user: {
-        photo: "../public/testimony-user.png",
+        photo: "/public/testimony-user.png",
         name: "Jenny Wilson",
         position: "Vice President",
       },
@@ -60,7 +60,7 @@ export const testimonialsData = {
       quote:
         '"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."',
       user: {
-        photo: "../public/testimony-user.png",
+        photo: "/public/testimony-user.png",
         name: "Jenny Wilson",
         position: "Vice President",
       },
@@ -69,7 +69,7 @@ export const testimonialsData = {
       quote:
         '"The best agency we’ve worked with so far. They understand our product and are able to add new features with a great focus."',
       user: {
-        photo: "../public/testimony-user.png",
+        photo: "/public/testimony-user.png",
         name: "Jenny Wilson",
         position: "Vice President",
       },

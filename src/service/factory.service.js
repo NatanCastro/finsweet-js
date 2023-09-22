@@ -1,5 +1,5 @@
-import { placeElement } from "../factory/place-element.factory.js";
-import { createElement } from "../factory/create-element.factory.js";
+import { placeElement } from "/factory/place-element.factory.js";
+import { createElement } from "/factory/create-element.factory.js";
 
 export class FactoryService {
   placeElementFactory;

@@ -1,6 +1,6 @@
-import { inquiryFormData } from "../data/home/inquiry-form.js";
-import { createElement } from "../factory/create-element.factory.js";
-import { placeElement } from "../factory/place-element.factory.js";
+import { inquiryFormData } from "/data/home/inquiry-form.js";
+import { createElement } from "/factory/create-element.factory.js";
+import { placeElement } from "/factory/place-element.factory.js";
 /**
  * @param {typeof inquiryFormData.form} formData
  * @returns {HTMLFormElement}

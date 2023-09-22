@@ -6,7 +6,7 @@ export const projectsData = {
   },
   projects: [
     {
-      image: "../public/workhub.png",
+      image: "/public/workhub.png",
       overlay: {
         type: "semi-overlay",
         title: "Workhub office Webflow Webflow Design",
@@ -18,7 +18,7 @@ export const projectsData = {
       },
     },
     {
-      image: "../public/usisaas.png",
+      image: "/public/usisaas.png",
       overlay: {
         type: "full-overlay",
         title: "Unisaas Website Design",
@@ -29,7 +29,7 @@ export const projectsData = {
       },
     },
     {
-      image: "../public/church.png",
+      image: "/public/church.png",
     },
   ],
 };

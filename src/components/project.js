@@ -1,5 +1,5 @@
-import { createElement } from "../factory/create-element.factory.js";
-import { placeElement } from "../factory/place-element.factory.js";
+import { createElement } from "/factory/create-element.factory.js";
+import { placeElement } from "/factory/place-element.factory.js";
 import { linkComponent } from "./link.js";
 
 export function projectComponent(image, overlay) {
@@ -33,7 +33,7 @@ export function projectComponent(image, overlay) {
     overlay.button.text,
     overlay.button.action,
     undefined,
-    true
+    true,
   );
   placeElement(actionEl, overlayEl);
 

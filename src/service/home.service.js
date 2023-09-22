@@ -1,18 +1,18 @@
-import { carouselComponent } from "../components/carousel.js";
-import { faqComponent } from "../components/faq.js";
-import { featureComponent } from "../components/feature.js";
-import { inquiryForm } from "../components/inquiry-form.js";
-import { linkComponent } from "../components/link.js";
-import { projectComponent } from "../components/project.js";
-import { testimonyCardComponent } from "../components/testimony-card.js";
-import { workStepComponent } from "../components/work-step.js";
-import { faqData } from "../data/home/faq.js";
-import { featuresData } from "../data/home/features.js";
-import { heroData } from "../data/home/hero.js";
-import { inquiryFormData } from "../data/home/inquiry-form.js";
-import { projectsData } from "../data/home/projects.js";
-import { testimonialsData } from "../data/home/testimony.js";
-import { workData } from "../data/home/work.js";
+import { carouselComponent } from "/components/carousel.js";
+import { faqComponent } from "/components/faq.js";
+import { featureComponent } from "/components/feature.js";
+import { inquiryForm } from "/components/inquiry-form.js";
+import { linkComponent } from "/components/link.js";
+import { projectComponent } from "/components/project.js";
+import { testimonyCardComponent } from "/components/testimony-card.js";
+import { workStepComponent } from "/components/work-step.js";
+import { faqData } from "/data/home/faq.js";
+import { featuresData } from "/data/home/features.js";
+import { heroData } from "/data/home/hero.js";
+import { inquiryFormData } from "/data/home/inquiry-form.js";
+import { projectsData } from "/data/home/projects.js";
+import { testimonialsData } from "/data/home/testimony.js";
+import { workData } from "/data/home/work.js";
 import { FactoryService } from "./factory.service.js";
 
 export class HomeService {

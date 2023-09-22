@@ -1,5 +1,5 @@
-import { createElement } from "../factory/create-element.factory.js";
-import { placeElement } from "../factory/place-element.factory.js";
+import { createElement } from "/factory/create-element.factory.js";
+import { placeElement } from "/factory/place-element.factory.js";
 
 /**
  * @param {{title: string, text: string}[]} questions

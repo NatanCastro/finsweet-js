@@ -25,7 +25,7 @@
 .step-icon {
   display: grid;
   background-color: #2405f2;
-  background-image: url("../../public/step-icon.svg");
+  background-image: url("/public/step-icon.svg");
   background-position: center center;
   width: 3.125rem;
   aspect-ratio: 1;

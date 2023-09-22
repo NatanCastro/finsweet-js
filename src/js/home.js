@@ -1,4 +1,4 @@
-import { homeService } from "../service/setup/index.js";
+import { homeService } from "/service/setup/index.js";
 
 const heroSect = document.getElementById("hero");
 homeService.createHero(heroSect);

@@ -1,5 +1,5 @@
-import { createElement } from "../factory/create-element.factory.js";
-import { arrows, orientation as ori } from "../data/arrows.js";
+import { createElement } from "/factory/create-element.factory.js";
+import { arrows, orientation as ori } from "/data/arrows.js";
 
 /**
  * @param {keyof arrows} type

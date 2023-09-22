@@ -1,5 +1,5 @@
-import { createElement } from "../factory/create-element.factory.js";
-import { placeElement } from "../factory/place-element.factory.js";
+import { createElement } from "/factory/create-element.factory.js";
+import { placeElement } from "/factory/place-element.factory.js";
 
 export function testimonyCardComponent(testimony) {
   const testimonyEl = createElement("div");

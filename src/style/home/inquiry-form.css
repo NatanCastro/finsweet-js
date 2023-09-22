@@ -11,7 +11,7 @@
   & > div:first-child {
     width: 100%;
     position: relative;
-    background-image: url("../../public/form-bg.jpeg");
+    background-image: url("/public/form-bg.jpeg");
     background-size: cover;
     background-position: 0 0;
 
