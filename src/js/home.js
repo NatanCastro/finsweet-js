@@ -20,3 +20,6 @@ homeService.createFaq(faqSect);
 
 const inquiryFormSect = document.getElementById("inquiry-form");
 homeService.createInquiryForm(inquiryFormSect);
+
+const blogSect = document.getElementById("blog");
+homeService.createBlog(blogSect);

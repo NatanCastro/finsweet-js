@@ -1,12 +1,12 @@
+import { arrows, orientation } from "/data/arrows.js";
 import { createElement } from "/factory/create-element.factory.js";
-import { arrows, orientation as ori } from "/data/arrows.js";
 
 /**
  * @param {keyof arrows} type
  * @param {string} [direction="right"]
  */
 export function arrowComponent(type, direction = "right") {
-  const rotation = ori[direction];
+  const rotation = orientation[direction];
   const div = createElement("div", {
     attrs: [
       {

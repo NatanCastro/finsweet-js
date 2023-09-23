@@ -1,14 +1,14 @@
 /**
  * @param {keyof HTMLElementTagNameMap} tag
  * @param {{
- *   text: string
- *   class: string
- *   id: string
- *   attrs: {
+ *   text?: string
+ *   class?: string
+ *   id?: string
+ *   attrs?: {
  *     key: string
  *     value: string
  *   }[]
- * }} values
+ * }} [values={}]
  * @returns {HTMLElement}
  */
 export function createElement(tag, values) {

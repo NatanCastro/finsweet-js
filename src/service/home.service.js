@@ -14,6 +14,8 @@ import { projectsData } from "/data/home/projects.js";
 import { testimonialsData } from "/data/home/testimony.js";
 import { workData } from "/data/home/work.js";
 import { FactoryService } from "./factory.service.js";
+import { blogData } from "/data/home/blog.js";
+import { blogCardComponent } from "/components/blog-card.js";
 
 export class HomeService {
   factoryService;
@@ -269,5 +271,19 @@ export class HomeService {
     this.factoryService.placeElement(leftDiv, shell);
     this.factoryService.placeElement(rightDiv, shell);
     this.factoryService.placeElement(shell, inquiryFormSect);
+  }
+
+  createBlog(blogSect) {
+    const title = this.factoryService.createElement("h2", {
+      text: blogData.title,
+    });
+    const blogPosts = this.factoryService.createElement("div");
+    blogData.posts.slice(0, 3).forEach((p) => {
+      const post = blogCardComponent(p);
+      this.factoryService.placeElement(post, blogPosts);
+    });
+
+    this.factoryService.placeElement(title, blogSect);
+    this.factoryService.placeElement(blogPosts, blogSect);
   }
 }
