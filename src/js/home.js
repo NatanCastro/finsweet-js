@@ -1,3 +1,4 @@
+import { footerComponent } from "/components/footer.js";
 import { headerComponent } from "/components/header.js";
 import { homeService } from "/service/setup/index.js";
 
@@ -27,3 +28,6 @@ homeService.createInquiryForm(inquiryFormSect);
 
 const blogSect = document.getElementById("blog");
 homeService.createBlog(blogSect);
+
+const footerSect = document.getElementById("footer");
+footerComponent(footerSect);
