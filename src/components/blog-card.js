@@ -34,8 +34,6 @@ export function blogCardComponent(data) {
     undefined,
     true,
   );
-  console.log(button);
-
   placeElement(image, card);
   placeElement(date, card);
   placeElement(title, card);

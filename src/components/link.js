@@ -8,7 +8,12 @@ import { arrowComponent } from "./arrow.js";
  * @param {string | undefined} className
  * @param {boolean} arrow
  */
-export function linkComponent(text, action, className, arrow) {
+export function linkComponent(
+  text,
+  action,
+  className = undefined,
+  arrow = false,
+) {
   const link = createElement("a", {
     text,
     class: className,

@@ -1,4 +1,8 @@
+import { headerComponent } from "/components/header.js";
 import { homeService } from "/service/setup/index.js";
+
+const headerSect = document.getElementById("header");
+headerComponent(headerSect);
 
 const heroSect = document.getElementById("hero");
 homeService.createHero(heroSect);
