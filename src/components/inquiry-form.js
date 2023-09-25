@@ -1,13 +1,13 @@
-import { inquiryFormData } from "/data/home/inquiry-form.js";
-import { createElement } from "/factory/create-element.factory.js";
-import { placeElement } from "/factory/place-element.factory.js";
+import { factoryService } from "/service/factory/index.js";
+import { inquiryFormData } from "/data/index.js";
+
 /**
  * @param {typeof inquiryFormData.form} formData
  * @returns {HTMLFormElement}
  */
 export function inquiryForm(formData) {
-  const form = createElement("form");
-  const nameLabel = createElement("label", {
+  const form = factoryService.createElement("form");
+  const nameLabel = factoryService.createElement("label", {
     text: formData.name.placeholder,
     class: "sr-only",
     attrs: [
@@ -17,7 +17,7 @@ export function inquiryForm(formData) {
       },
     ],
   });
-  const nameInput = createElement("input", {
+  const nameInput = factoryService.createElement("input", {
     id: formData.name.id,
     attrs: [
       {
@@ -33,7 +33,7 @@ export function inquiryForm(formData) {
       },
     ],
   });
-  const emailLabel = createElement("label", {
+  const emailLabel = factoryService.createElement("label", {
     text: formData.email.placeholder,
     class: "sr-only",
     attrs: [
@@ -43,7 +43,7 @@ export function inquiryForm(formData) {
       },
     ],
   });
-  const emailInput = createElement("input", {
+  const emailInput = factoryService.createElement("input", {
     id: formData.email.id,
     attrs: [
       {
@@ -59,7 +59,7 @@ export function inquiryForm(formData) {
       },
     ],
   });
-  const figmaLabel = createElement("label", {
+  const figmaLabel = factoryService.createElement("label", {
     text: formData.figma.placeholder,
     class: "sr-only",
     attrs: [
@@ -69,7 +69,7 @@ export function inquiryForm(formData) {
       },
     ],
   });
-  const figmaInput = createElement("input", {
+  const figmaInput = factoryService.createElement("input", {
     id: formData.figma.id,
     attrs: [
       {
@@ -90,16 +90,18 @@ export function inquiryForm(formData) {
       },
     ],
   });
-  const button = createElement("button", {
+  const button = factoryService.createElement("button", {
     text: "Send an Inquiry",
   });
 
-  placeElement(nameLabel, form);
-  placeElement(nameInput, form);
-  placeElement(emailLabel, form);
-  placeElement(emailInput, form);
-  placeElement(figmaLabel, form);
-  placeElement(figmaInput, form);
-  placeElement(button, form);
+  factoryService.placeElement([
+    { element: nameLabel, position: form },
+    { element: nameInput, position: form },
+    { element: emailLabel, position: form },
+    { element: emailInput, position: form },
+    { element: figmaLabel, position: form },
+    { element: figmaInput, position: form },
+    { element: button, position: form },
+  ]);
   return form;
 }

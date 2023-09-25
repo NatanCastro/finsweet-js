@@ -9,5 +9,5 @@ export const heroData = {
     text: "View Pricing",
     action: "",
   },
-  image: "/public/hero-img.svg",
+  image: "/assets/images/hero-img.svg",
 };

@@ -1,6 +1,5 @@
-import { footerComponent } from "/components/footer.js";
-import { headerComponent } from "/components/header.js";
-import { homeService } from "/service/setup/index.js";
+import { homeService } from "/service/home/index.js";
+import { footerComponent, headerComponent } from "/components/index.js";
 
 const headerSect = document.getElementById("header");
 headerComponent(headerSect);

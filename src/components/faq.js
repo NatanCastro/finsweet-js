@@ -1,19 +1,18 @@
-import { createElement } from "/factory/create-element.factory.js";
-import { placeElement } from "/factory/place-element.factory.js";
+import { factoryService } from "/service/factory/index.js";
 
 /**
  * @param {{title: string, text: string}[]} questions
  * @returns {HTMLElement}
  */
 export function faqComponent(questions) {
-  const faqEl = createElement("div", {
+  const faqEl = factoryService.createElement("div", {
     class: "faq-content",
   });
   questions.forEach((q, i) => {
-    const details = createElement("details", {
+    const details = factoryService.createElement("details", {
       class: "faq-item",
     });
-    const summary = createElement("summary", {
+    const summary = factoryService.createElement("summary", {
       text: q.title,
       attrs: [
         {
@@ -22,7 +21,7 @@ export function faqComponent(questions) {
         },
       ],
     });
-    const text = createElement("p", {
+    const text = factoryService.createElement("p", {
       text: q.text,
     });
 
@@ -59,9 +58,20 @@ export function faqComponent(questions) {
       }
     });
 
-    placeElement(summary, details);
-    placeElement(text, details);
-    placeElement(details, faqEl);
+    factoryService.placeElement([
+      {
+        element: summary,
+        position: details,
+      },
+      {
+        element: text,
+        position: details,
+      },
+      {
+        element: details,
+        position: faqEl,
+      },
+    ]);
   });
   return faqEl;
 }

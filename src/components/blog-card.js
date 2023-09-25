@@ -1,12 +1,11 @@
-import { placeElement } from "/factory/place-element.factory.js";
-import { createElement } from "/factory/create-element.factory.js";
+import { factoryService } from "/service/factory/index.js";
 import { linkComponent } from "./link.js";
 
 export function blogCardComponent(data) {
-  const card = createElement("div", {
+  const card = factoryService.createElement("div", {
     class: "blog-card",
   });
-  const image = createElement("img", {
+  const image = factoryService.createElement("img", {
     attrs: [
       {
         key: "src",
@@ -14,30 +13,43 @@ export function blogCardComponent(data) {
       },
     ],
   });
-  const date = createElement("span", {
+  const date = factoryService.createElement("span", {
     text: new Date(data.date).toLocaleDateString("pt-BR", {
       day: "numeric",
       month: "short",
       year: "numeric",
     }),
   });
-  const title = createElement("h3", {
+  const title = factoryService.createElement("h3", {
     text: data.title,
   });
-  const text = createElement("p", {
+  const text = factoryService.createElement("p", {
     text: data.summary,
   });
 
-  const button = linkComponent(
-    data.button.text,
-    data.button.action,
-    undefined,
-    true,
-  );
-  placeElement(image, card);
-  placeElement(date, card);
-  placeElement(title, card);
-  placeElement(text, card);
-  placeElement(button, card);
+  const button = linkComponent(data.button.text, data.button.action);
+
+  factoryService.placeElement([
+    {
+      element: image,
+      position: card,
+    },
+    {
+      element: date,
+      position: card,
+    },
+    {
+      element: title,
+      position: card,
+    },
+    {
+      element: text,
+      position: card,
+    },
+    {
+      element: button,
+      position: card,
+    },
+  ]);
   return card;
 }

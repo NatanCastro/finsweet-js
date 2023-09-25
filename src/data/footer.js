@@ -1,5 +1,5 @@
 export const footerData = {
-  logo: "/public/logo.svg",
+  logo: "/assets/images/logo.svg",
   title: "Lets Talk!",
   leftText:
     "We are always open to discuss your project and improve your online presence.",
@@ -17,19 +17,19 @@ export const footerData = {
   },
   socials: [
     {
-      image: "/public/facebook.svg",
+      image: "/assets/icons/facebook.svg",
       action: "",
     },
     {
-      image: "/public/twitter.svg",
+      image: "/assets/icons/twitter.svg",
       action: "",
     },
     {
-      image: "/public/instagram.svg",
+      image: "/assets/icons/instagram.svg",
       action: "",
     },
     {
-      image: "/public/linkedin.svg",
+      image: "/assets/icons/linkedin.svg",
       action: "",
     },
   ],

@@ -39,7 +39,7 @@
 
   & > summary::after {
     content: "";
-    background-image: url("/public/open-icon.svg");
+    background-image: url("/assets/icons/open-icon.svg");
     background-position: 50% 50%;
     width: 15px;
     aspect-ratio: 1;

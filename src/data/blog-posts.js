@@ -1,6 +1,6 @@
 export const blogPosts = [
   {
-    image: "/public/blog/blog-1.png",
+    image: "/assets/images/blog/blog-1.png",
     date: "2022-03-19",
     title:
       "How one Webflow user grew his single person consultancy from $0-100K in 14 months",
@@ -13,7 +13,7 @@ export const blogPosts = [
     content: {},
   },
   {
-    image: "/public/blog/blog-1.png",
+    image: "/assets/images/blog/blog-1.png",
     date: "2022-03-19",
     title:
       "How one Webflow user grew his single person consultancy from $0-100K in 14 months",
@@ -26,7 +26,7 @@ export const blogPosts = [
     content: {},
   },
   {
-    image: "/public/blog/blog-1.png",
+    image: "/assets/images/blog/blog-1.png",
     date: "2022-03-19",
     title:
       "How one Webflow user grew his single person consultancy from $0-100K in 14 months",
@@ -39,7 +39,7 @@ export const blogPosts = [
     content: {},
   },
   {
-    image: "/public/blog/blog-1.png",
+    image: "/assets/images/blog/blog-1.png",
     date: "2022-03-19",
     title:
       "How one Webflow user grew his single person consultancy from $0-100K in 14 months",
@@ -52,7 +52,7 @@ export const blogPosts = [
     content: {},
   },
   {
-    image: "/public/blog/blog-1.png",
+    image: "/assets/images/blog/blog-1.png",
     date: "2022-03-19",
     title:
       "How one Webflow user grew his single person consultancy from $0-100K in 14 months",

@@ -1,5 +1,4 @@
-import { createElement } from "/factory/create-element.factory.js";
-import { placeElement } from "/factory/place-element.factory.js";
+import { factoryService } from "/service/factory/index.js";
 import { arrowComponent } from "./arrow.js";
 
 /**
@@ -14,7 +13,7 @@ export function linkComponent(
   className = undefined,
   arrow = false,
 ) {
-  const link = createElement("a", {
+  const link = factoryService.createElement("a", {
     text,
     class: className,
     attrs: [
@@ -26,7 +25,7 @@ export function linkComponent(
   });
   if (arrow) {
     const arrowEl = arrowComponent("long");
-    placeElement(arrowEl, link);
+    factoryService.placeElement([{ element: arrowEl, position: link }]);
   }
   return link;
 }

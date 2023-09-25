@@ -1,9 +1,8 @@
-import { createElement } from "/factory/create-element.factory.js";
-import { placeElement } from "/factory/place-element.factory.js";
+import { factoryService } from "/service/factory/index.js";
 import { linkComponent } from "./link.js";
 
 export function projectComponent(image, overlay) {
-  const projectEl = createElement("div", {
+  const projectEl = factoryService.createElement("div", {
     attrs: [
       {
         key: "style",
@@ -13,20 +12,20 @@ export function projectComponent(image, overlay) {
   });
   if (!overlay) return projectEl;
 
-  const overlayEl = createElement("div", {
+  const overlayEl = factoryService.createElement("div", {
     class: `overlay ${overlay.type}`,
   });
 
-  const titleEl = createElement("h3", {
+  const titleEl = factoryService.createElement("h3", {
     text: overlay.title,
   });
-  placeElement(titleEl, overlayEl);
+  factoryService.placeElement([{ element: titleEl, position: overlayEl }]);
 
   if (overlay.text) {
-    const textEl = createElement("p", {
+    const textEl = factoryService.createElement("p", {
       text: overlay.text,
     });
-    placeElement(textEl, overlayEl);
+    factoryService.placeElement([{ element: textEl, position: overlayEl }]);
   }
 
   const actionEl = linkComponent(
@@ -35,8 +34,9 @@ export function projectComponent(image, overlay) {
     undefined,
     true,
   );
-  placeElement(actionEl, overlayEl);
-
-  placeElement(overlayEl, projectEl);
+  factoryService.placeElement([
+    { element: actionEl, position: overlayEl },
+    { element: overlayEl, position: projectEl },
+  ]);
   return projectEl;
 }

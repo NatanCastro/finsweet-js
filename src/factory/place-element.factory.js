@@ -1,7 +1,8 @@
 /**
- * @param {HTMLElement} element
- * @param {HTMLElement} location
+ * @param {{position: HTMLElement, element: HTMLElement}[]} data
  */
-export function placeElement(element, location) {
-  location.appendChild(element);
+export function placeElement(data) {
+  data.forEach((d) => {
+    d.position.appendChild(d.element);
+  });
 }

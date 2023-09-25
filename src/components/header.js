@@ -1,10 +1,9 @@
-import { headerData } from "/data/header.js";
-import { createElement } from "/factory/create-element.factory.js";
+import { headerData } from "/data/index.js";
 import { linkComponent } from "./link.js";
-import { placeElement } from "/factory/place-element.factory.js";
+import { factoryService } from "/service/factory/index.js";
 
 export function headerComponent(headerSect) {
-  const logo = createElement("img", {
+  const logo = factoryService.createElement("img", {
     attrs: [
       {
         key: "src",
@@ -12,18 +11,20 @@ export function headerComponent(headerSect) {
       },
     ],
   });
-  const content = createElement("div", {
+  const content = factoryService.createElement("div", {
     class: "header-content",
   });
-  const nav = createElement("nav", {
+  const nav = factoryService.createElement("nav", {
     class: "header-nav",
   });
-  const ul = createElement("ul");
+  const ul = factoryService.createElement("ul");
   headerData.links.map((l) => {
-    const li = createElement("li");
+    const li = factoryService.createElement("li");
     const link = linkComponent(l.text, l.action);
-    placeElement(link, li);
-    placeElement(li, ul);
+    factoryService.placeElement([
+      { element: link, position: li },
+      { element: li, position: ul },
+    ]);
   });
 
   const contactButton = linkComponent(
@@ -32,9 +33,11 @@ export function headerComponent(headerSect) {
     "header-contact",
   );
 
-  placeElement(ul, nav);
-  placeElement(nav, content);
-  placeElement(contactButton, content);
-  placeElement(logo, headerSect);
-  placeElement(content, headerSect);
+  factoryService.placeElement([
+    { element: ul, position: nav },
+    { element: nav, position: content },
+    { element: contactButton, position: content },
+    { element: logo, position: headerSect },
+    { element: content, position: headerSect },
+  ]);
 }

@@ -1,5 +1,5 @@
 export const headerData = {
-  logo: "/public/logo.svg",
+  logo: "/assets/images/logo.svg",
   links: [
     {
       text: "Home",

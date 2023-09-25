@@ -1,14 +1,13 @@
-import { linkComponent } from "./link.js";
-import { footerData } from "/data/footer.js";
-import { createElement } from "/factory/create-element.factory.js";
-import { placeElement } from "/factory/place-element.factory.js";
+import { factoryService } from "/service/factory/index.js";
+import { linkComponent } from "./index.js";
+import { footerData } from "/data/index.js";
 
 export function footerComponent(footerSect) {
-  const leftDiv = createElement("div", {
+  const leftDiv = factoryService.createElement("div", {
     class: "footer-left",
   });
-  const leftContent = createElement("div");
-  const logo = createElement("img", {
+  const leftContent = factoryService.createElement("div");
+  const logo = factoryService.createElement("img", {
     attrs: [
       {
         key: "src",
@@ -16,19 +15,19 @@ export function footerComponent(footerSect) {
       },
     ],
   });
-  const leftText = createElement("p", {
+  const leftText = factoryService.createElement("p", {
     text: footerData.leftText,
   });
-  const contactDiv = createElement("div", {
+  const contactDiv = factoryService.createElement("div", {
     class: "footer-contact",
   });
-  const emailDiv = createElement("div", {
+  const emailDiv = factoryService.createElement("div", {
     class: "footer-contact-email",
   });
-  const emailText = createElement("p", {
+  const emailText = factoryService.createElement("p", {
     text: footerData.contact.email.text,
   });
-  const email = createElement("a", {
+  const email = factoryService.createElement("a", {
     text: footerData.contact.email.email,
     attrs: [
       {
@@ -37,13 +36,13 @@ export function footerComponent(footerSect) {
       },
     ],
   });
-  const phoneDiv = createElement("div", {
+  const phoneDiv = factoryService.createElement("div", {
     class: "footer-contact-phone",
   });
-  const phoneText = createElement("p", {
+  const phoneText = factoryService.createElement("p", {
     text: footerData.contact.phone.text,
   });
-  const phone = createElement("a", {
+  const phone = factoryService.createElement("a", {
     text: footerData.contact.phone.phone,
     attrs: [
       {
@@ -52,20 +51,20 @@ export function footerComponent(footerSect) {
       },
     ],
   });
-  const rightDiv = createElement("div", {
+  const rightDiv = factoryService.createElement("div", {
     class: "footer-right",
   });
-  const title = createElement("h2", {
+  const title = factoryService.createElement("h2", {
     text: footerData.title,
   });
-  const rightText = createElement("p", {
+  const rightText = factoryService.createElement("p", {
     text: footerData.rightText,
   });
-  const socialsDiv = createElement("div", {
+  const socialsDiv = factoryService.createElement("div", {
     class: "footer-socials",
   });
   footerData.socials.forEach((s) => {
-    const a = createElement("a", {
+    const a = factoryService.createElement("a", {
       attrs: [
         {
           key: "href",
@@ -73,7 +72,7 @@ export function footerComponent(footerSect) {
         },
       ],
     });
-    const img = createElement("img", {
+    const img = factoryService.createElement("img", {
       attrs: [
         {
           key: "src",
@@ -82,43 +81,49 @@ export function footerComponent(footerSect) {
       ],
     });
 
-    placeElement(img, a);
-    placeElement(a, socialsDiv);
+    factoryService.placeElement([
+      { element: img, position: a },
+      { element: a, position: socialsDiv },
+    ]);
   });
-  const bottonDiv = createElement("div", {
+  const bottonDiv = factoryService.createElement("div", {
     class: "footer-bottom",
   });
-  const copy = createElement("p", {
+  const copy = factoryService.createElement("p", {
     text: footerData.copy,
   });
-  const nav = createElement("nav", {
+  const nav = factoryService.createElement("nav", {
     class: "footer-nav",
   });
-  const ul = createElement("ul");
+  const ul = factoryService.createElement("ul");
   footerData.links.map((l) => {
-    const li = createElement("li");
+    const li = factoryService.createElement("li");
     const link = linkComponent(l.text, l.action);
-    placeElement(link, li);
-    placeElement(li, ul);
+    factoryService.placeElement([
+      { element: link, position: li },
+      { element: li, position: ul },
+    ]);
   });
 
-  placeElement(logo, leftContent);
-  placeElement(leftText, leftContent);
-  placeElement(leftContent, leftDiv);
-  placeElement(emailText, emailDiv);
-  placeElement(email, emailDiv);
-  placeElement(emailDiv, contactDiv);
-  placeElement(phoneText, phoneDiv);
-  placeElement(phone, phoneDiv);
-  placeElement(phoneDiv, contactDiv);
-  placeElement(contactDiv, leftDiv);
-  placeElement(leftDiv, footerSect);
-  placeElement(title, rightDiv);
-  placeElement(rightText, rightDiv);
-  placeElement(socialsDiv, rightDiv);
-  placeElement(rightDiv, footerSect);
-  placeElement(copy, bottonDiv);
-  placeElement(ul, nav);
-  placeElement(nav, bottonDiv);
-  placeElement(bottonDiv, footerSect);
+  factoryService.placeElement([
+    { element: logo, position: leftContent },
+    { element: leftText, position: leftContent },
+    { element: leftContent, position: leftDiv },
+    { element: emailText, position: emailDiv },
+    { element: email, position: emailDiv },
+    { element: emailDiv, position: contactDiv },
+    { element: phoneText, position: phoneDiv },
+    { element: phone, position: phoneDiv },
+    { element: phoneDiv, position: contactDiv },
+    { element: contactDiv, position: leftDiv },
+    { element: leftDiv, position: footerSect },
+    { element: title, position: rightDiv },
+    { element: rightText, position: rightDiv },
+    { element: socialsDiv, position: rightDiv },
+    { element: rightDiv, position: footerSect },
+    { element: copy, position: bottonDiv },
+    { element: ul, position: nav },
+    { element: nav, position: bottonDiv },
+    { element: bottonDiv, position: footerSect },
+  ]);
 }

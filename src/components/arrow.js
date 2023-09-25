@@ -1,5 +1,5 @@
-import { arrows, orientation } from "/data/arrows.js";
-import { createElement } from "/factory/create-element.factory.js";
+import { factoryService } from "/service/factory/index.js";
+import { arrows, orientation } from "/data/index.js";
 
 /**
  * @param {keyof arrows} type
@@ -7,7 +7,7 @@ import { createElement } from "/factory/create-element.factory.js";
  */
 export function arrowComponent(type, direction = "right") {
   const rotation = orientation[direction];
-  const div = createElement("div", {
+  const div = factoryService.createElement("div", {
     attrs: [
       {
         key: "style",

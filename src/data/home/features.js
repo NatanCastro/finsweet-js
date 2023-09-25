@@ -3,32 +3,32 @@ export const featuresData = {
   title: "Design that solves problems, one product at a time",
   features: [
     {
-      icon: "/public/user-icon.svg",
+      icon: "/assets/icons/user-icon.svg",
       title: "Uses Client First",
       text: "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi. ",
     },
     {
-      icon: "/public/verified-icon.svg",
+      icon: "/assets/icons/verified-icon.svg",
       title: "Uses Client First",
       text: "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi. ",
     },
     {
-      icon: "/public/template-icon.svg",
+      icon: "/assets/icons/template-icon.svg",
       title: "Uses Client First",
       text: "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi. ",
     },
     {
-      icon: "/public/support-icon.svg",
+      icon: "/assets/icons/support-icon.svg",
       title: "Uses Client First",
       text: "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi. ",
     },
     {
-      icon: "/public/time-icon.svg",
+      icon: "/assets/icons/time-icon.svg",
       title: "Uses Client First",
       text: "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi. ",
     },
     {
-      icon: "/public/handson-icon.svg",
+      icon: "/assets/icons/handson-icon.svg",
       title: "Uses Client First",
       text: "Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam sed faucib turpis eu gravida mi. Pellentesque et velit aliquam sed mi. ",
     },

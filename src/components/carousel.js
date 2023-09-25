@@ -1,5 +1,4 @@
-import { createElement } from "/factory/create-element.factory.js";
-import { placeElement } from "/factory/place-element.factory.js";
+import { factoryService } from "/service/factory/index.js";
 import { arrowComponent } from "./arrow.js";
 
 /**
@@ -9,18 +8,18 @@ export function carouselComponent(items) {
   let length = items.length - 1;
   let curr = 0;
 
-  const carousel = createElement("div", {
+  const carousel = factoryService.createElement("div", {
     class: "carousel",
   });
-  const content = createElement("div", {
+  const content = factoryService.createElement("div", {
     class: "carousel-content",
   });
-  const buttonsDiv = createElement("div", {
+  const buttonsDiv = factoryService.createElement("div", {
     class: "carousel-buttons",
   });
-  const btnLeft = createElement("button");
+  const btnLeft = factoryService.createElement("button");
   const arrowLeft = arrowComponent("short", "left");
-  const btnRight = createElement("button");
+  const btnRight = factoryService.createElement("button");
   const arrowRight = arrowComponent("short");
 
   function setPosition() {
@@ -52,14 +51,34 @@ export function carouselComponent(items) {
   }, 5000);
 
   items.forEach((i) => {
-    placeElement(i, content);
+    factoryService.placeElement([{ element: i, position: content }]);
   });
-  placeElement(arrowLeft, btnLeft);
-  placeElement(arrowRight, btnRight);
-  placeElement(btnLeft, buttonsDiv);
-  placeElement(btnRight, buttonsDiv);
-  placeElement(content, carousel);
-  placeElement(buttonsDiv, carousel);
+  factoryService.placeElement([
+    {
+      element: arrowLeft,
+      position: btnLeft,
+    },
+    {
+      element: arrowRight,
+      position: btnRight,
+    },
+    {
+      element: btnLeft,
+      position: buttonsDiv,
+    },
+    {
+      element: btnRight,
+      position: buttonsDiv,
+    },
+    {
+      element: content,
+      position: carousel,
+    },
+    {
+      element: buttonsDiv,
+      position: carousel,
+    },
+  ]);
 
   return carousel;
 }
