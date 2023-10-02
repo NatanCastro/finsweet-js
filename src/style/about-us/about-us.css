@@ -1,0 +1,19 @@
+#about-us {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 4rem 5rem;
+
+  & h1 {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  @media (max-width: 425px) {
+    padding: 4rem 1rem;
+  }
+}
