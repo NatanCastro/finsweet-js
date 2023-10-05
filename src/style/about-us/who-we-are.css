@@ -1,0 +1,48 @@
+#who-we-are {
+  padding: 4rem 5rem;
+
+  & > div {
+    background-color: #f5f5f5;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+
+    & > span {
+      margin-left: 4rem;
+    }
+    & > img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      flex-grow: 1;
+    }
+  }
+
+  @media (max-width: 425px) {
+    padding: 1rem;
+
+    & > div {
+      padding-top: 2rem;
+
+      & > span {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+.who-we-are-text {
+  margin: 1rem 4rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 425px) {
+    margin: 1rem;
+  }
+}
